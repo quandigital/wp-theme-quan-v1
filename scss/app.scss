@@ -1,2 +1,16 @@
 @import "settings";
 @import "foundation";
+@import "vars",
+		// "compass/css3",
+		"functions",
+		"bourbon/bourbon",
+		"mixins",
+		"modernizr-fixes",
+		"frame",
+		//fonts
+		"fonts/ionicons",
+		"fonts/nexafreelight",
+		"fonts/nexafreebold",
+		"fonts/nexaslabregular",
+		"fonts/nexaslabbold",
+		"fonts/gothic";

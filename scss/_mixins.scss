@@ -1,0 +1,37 @@
+@mixin clearfix {
+	&:after {
+		visibility: hidden;
+		display: block;
+		font-size: 0;
+		content: " ";
+		clear: both;
+		height: 0;
+	}
+}
+
+@mixin circle {
+	height: 6.25em;
+	width: 6.25em;
+	border:3px solid black;
+	position:relative;
+	left:60%;
+	@include border-radius( 50% );
+}
+
+@mixin placeholder {
+	&::-webkit-input-placeholder {
+		@content
+	}
+
+	&:-moz-placeholder { /* Firefox 18- */
+		@content
+	}
+
+	&::-moz-placeholder {  /* Firefox 19+ */
+		@content
+	}
+
+	&:-ms-input-placeholder {  
+		@content
+	}
+}

@@ -1,0 +1,54 @@
+//presentational frame markup
+#top, #bottom, #left, #right {
+	background: lighten( $light, 20% );
+	position: fixed;
+	z-index:6;
+	.inner {
+		z-index:5;
+	}
+}
+#left, #right {
+	top: 0; 
+	bottom: 0;
+	width: 15px;	
+}
+#left { 
+	left: 0; 
+}
+#right { 
+	right: 0; 
+}
+	
+#top, #bottom {
+	left: 0; 
+	right: 0;
+	height: 15px;
+}
+#top { 
+	top: 0; 
+}
+#bottom { 
+	bottom: 0; 
+}
+
+#frame {
+	position:fixed;
+	top: 7px;
+	bottom: 7px;
+	right: 7px;
+	left: 7px;
+	border:2px solid $quan;
+	z-index:7;
+	pointer-events:none;
+}
+
+#inner-frame {
+	position:fixed;
+	top: 14px;
+	bottom: 14px;
+	right: 14px;
+	left: 14px;
+	border:1px solid $quan;
+	z-index:7;
+	pointer-events:none;
+}
