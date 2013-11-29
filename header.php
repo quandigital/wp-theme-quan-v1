@@ -17,10 +17,16 @@
 	</script>
 	<!--script src="http://192.168.2.154:8080/target/target-script-min.js#anonymous"></script-->
 </head>
-<body>
+<body <?php body_class(); ?>>
 
+	
+	<!-- <div class="border"></div> -->
+	
 	<header>
-		
+		<img src="<?php echo get_template_directory_uri() . '/images/QuanDigital.svg'; ?>" alt="" height="100" />
+
+		<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
 	</header>
 	
+
 	<div id="main" class="main-container">	

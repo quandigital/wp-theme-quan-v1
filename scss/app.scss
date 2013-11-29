@@ -1,7 +1,6 @@
 @import "settings";
 @import "foundation";
 @import "vars",
-		// "compass/css3",
 		"functions",
 		"bourbon/bourbon",
 		"mixins",
@@ -9,8 +8,224 @@
 		"frame",
 		//fonts
 		"fonts/ionicons",
-		"fonts/nexafreelight",
-		"fonts/nexafreebold",
-		"fonts/nexaslabregular",
-		"fonts/nexaslabbold",
+		"fonts/nexafreelight", //nexa_lightregular
+		"fonts/nexafreebold", //nexa_boldregular
+		"fonts/nexaslabregular",  //nexa_slab_regular_freeregular
+		"fonts/nexaslabbold", //nexa_slab_bold_freeregular
 		"fonts/gothic";
+
+.admin-bar {
+	.border {
+		top:42px;
+	}
+}
+
+html {
+	height:100%;
+	min-height:100%;
+}
+body {
+	-webkit-font-smoothing: antialiased;
+	background: {
+		color: $sky;
+		image: url(../images/aperile.png);
+		repeat: repeat;
+		attachment:fixed;
+	}
+	min-height:100%;
+	border:1px solid $quan;
+	font-family: nexa_lightregular, sans-serif;
+	padding: 14px;
+}
+
+*, *:before, *:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+a {
+	$color: $wheat; //lighten($quan, 20%);
+	text-decoration:none;
+	border-bottom:1px dotted $color;
+	color: $color;
+	&:hover {
+		border-bottom: 1px solid darken($color, 20%);
+		color: darken($color, 20%);
+	}
+}
+
+header {
+	@include grid-row();
+	background: {
+		color: rgba($sky, .5);
+	}
+	height:120px;
+	padding: 10px;
+	position: fixed;
+	top:42px;
+	left:50%;
+	margin-left: -500px;
+	z-index:7;	
+	> div {
+		@include grid-column($columns:10, $float:left, $collapse:true);
+		margin-top: 3px;
+	}
+	> img {
+		@include grid-column($columns:2, $float:right);
+	}
+	.menu {
+		@include grid-column($columns:12, $collapse:false);
+		li {
+			display:inline-block;
+			list-style: {
+				type:none;
+				position:inside;
+			}
+			font: {
+				size:1.8em;
+			}
+			&:after {
+				content:" / ";
+				color:$quan;
+			}
+			&:last-child {
+				&:after{
+					content:"";
+				}
+			}
+			a {
+				border-bottom:none;
+				&:hover {
+					border-bottom:none;
+				}
+			}
+		}
+	}
+}
+
+.border {
+	height:120px;
+	background-color:$wheat;
+	position:absolute;
+	top:14px;
+	width:100%;
+	z-index:1;
+}
+
+.main-container {
+	@include grid-row();
+	min-height:100%;
+	background-color: rgba($sky, .5);
+	margin-top: 119px;
+}
+
+.content {
+	@include grid-column($columns:12, $collapse:false);
+	h1 {
+		font: {
+			family: nexa_boldregular, sans-serif;
+			size:2.3em;
+		}
+	}
+	article {
+		font-size:1.2em;
+	}
+}
+
+.author {
+	@include grid-column($columns:12, $collapse:false);
+	text-align:center;
+	img {
+		border-radius:50%;
+	}
+	.name {
+		@include grid-column(12);
+		font: {
+			family: nexa_boldregular, sans-serif;
+			size:1.8em;
+		}
+	}
+	.job {
+		@include grid-column(12);
+		font-size:1.2em;
+	}
+	.socials {
+		@include grid-column(12);
+		text-align:center;
+	}
+	.social {
+		display:inline;
+		font: {
+			family: nexa_boldregular, sans-serif;
+			size:1.2em;
+		}
+		a {
+			border:none;
+		}
+		&:after {
+			content:"|";
+			display: inline-block;
+			padding: 0 5px;
+			color:$wheat;
+		}
+		&:last-child {
+			&:after {
+				family: nexa_lightregular, sans-serif;
+				content:"";
+			}
+		}
+	}
+}
+
+.meta {
+	@include grid-column(12);
+	font: {
+		// family: nexa_boldregular, sans-serif;
+		size:1.3em;
+	}
+}
+.article-share {
+	@include grid-column(12);
+	a {
+		border-bottom:none;
+		@include transition-duration(.3s);
+		&:hover {
+			color: $quan;
+			@include transition-duration(.3s);
+			i {
+				color: darken($wheat, 20%);
+				@include transition-duration(.3s);
+			}
+		}
+		i {
+			padding: 10px;
+			border-radius:50%;
+			@include transition-duration(.3s);
+		}
+	}
+	.facebook {
+		a {
+			i {
+				background-color: mix($facebook-color, $quan, 60%);
+			}
+		}
+		margin-bottom: 20px;
+	}
+	.twitter {
+		a {
+			i {
+				background-color: mix($twitter-color, $quan, 60%);
+			}
+		}
+		margin-bottom: 20px;
+	}
+	.gplus {
+		a {
+			i {
+				background-color: mix($gplus-color, $quan, 60%);
+			}
+		}
+		margin-bottom: 20px;
+	}
+}

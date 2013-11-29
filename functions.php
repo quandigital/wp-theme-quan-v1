@@ -117,3 +117,16 @@ function add_htaccess($insertion) {
     	);
     return insert_with_markers($htaccess_file, 'Font-MIME-Type', $insertion);
 }
+
+//register header menu
+add_action( 'init', 'quan_header_menu' );
+
+function quan_header_menu() {
+	register_nav_menus( 
+		array(
+			'header-menu' => 'Header Menu',
+			'footer-menu' => 'Footer Menu'
+		)
+	);
+}
+
