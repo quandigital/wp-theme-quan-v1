@@ -35,3 +35,7 @@
 		@content
 	}
 }
+
+@mixin std-border( $position:"" ) {
+	border#{$position}:1px solid rgba($quan, .5);
+}

@@ -15,7 +15,7 @@
 			$( 'html' ).removeClass( 'no-touch' ).addClass( 'touch' );
 		}
 	</script>
-	<!--script src="http://192.168.2.154:8080/target/target-script-min.js#anonymous"></script-->
+	<!-- <script src="http://192.168.2.50:8080/target/target-script-min.js#anonymous"></script> -->
 </head>
 <body <?php body_class(); ?>>
 
@@ -24,8 +24,9 @@
 	
 	<header>
 		<img src="<?php echo get_template_directory_uri() . '/images/QuanDigital.svg'; ?>" alt="" height="100" />
-
-		<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+		<div>
+			<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+		</div>
 	</header>
 	
 

@@ -73,12 +73,12 @@ $include-print-styles: false;
 // $xlarge-range: (90.063em, 120em);
 // $xxlarge-range: (120.063em);
 
-// $screen: "only screen";
+$screen: "only screen";
 
 // $landscape: "#{$screen} and (orientation: landscape)";
 // $portrait: "#{$screen} and (orientation: portrait)";
 
-// $small-up: $screen;
+$small-up: $screen;
 // $small-only: "#{$screen} and (max-width: #{upper-bound($small-range)})";
 
 // $medium-up: "#{$screen} and (min-width:#{lower-bound($medium-range)})";
@@ -94,7 +94,7 @@ $include-print-styles: false;
 // $xxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and (max-width:#{upper-bound($xxlarge-range)})";
 
 // Legacy
-// $small: $medium-up;
+$small: $small-up;
 // $medium: $medium-up;
 // $large: $large-up;
 

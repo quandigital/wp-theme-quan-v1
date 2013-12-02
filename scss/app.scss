@@ -1,4 +1,4 @@
-@import "settings";
+// @import "settings";
 @import "foundation";
 @import "vars",
 		"functions",
@@ -18,6 +18,9 @@
 	.border {
 		top:42px;
 	}
+	header {
+		top:42px;
+	}
 }
 
 html {
@@ -30,7 +33,7 @@ body {
 		color: $sky;
 		image: url(../images/aperile.png);
 		repeat: repeat;
-		attachment:fixed;
+		attachment:scroll;
 	}
 	min-height:100%;
 	border:1px solid $quan;
@@ -56,48 +59,51 @@ a {
 }
 
 header {
-	@include grid-row();
+	min-height:100px;
+	top:14px;
+	left: 0;
+	width:100%;
+	z-index:1;
+	@include std-border( -bottom );
 	background: {
-		color: rgba($sky, .5);
+		color: rgba($sky,.95);
+		image: url(../images/aperile.png);
 	}
-	height:120px;
-	padding: 10px;
-	position: fixed;
-	top:42px;
-	left:50%;
-	margin-left: -500px;
-	z-index:7;	
+	&.scrolled-shadow {
+		box-shadow: 0 8px 6px -6px rgba($quan, .5);
+	}
 	> div {
-		@include grid-column($columns:10, $float:left, $collapse:true);
-		margin-top: 3px;
-	}
-	> img {
-		@include grid-column($columns:2, $float:right);
-	}
-	.menu {
-		@include grid-column($columns:12, $collapse:false);
-		li {
-			display:inline-block;
-			list-style: {
-				type:none;
-				position:inside;
-			}
-			font: {
-				size:1.8em;
-			}
-			&:after {
-				content:" / ";
-				color:$quan;
-			}
-			&:last-child {
-				&:after{
-					content:"";
+		@include grid-row();
+		.menu-header-container {
+			@include grid-column(12);
+		}
+		.menu {
+			@include grid-column($columns:12,$collapse:true);
+			text-align: center;
+			margin-left: 0;
+			li {
+				display:inline-block;
+				list-style: {
+					type:none;
+					position:inside;
 				}
-			}
-			a {
-				border-bottom:none;
-				&:hover {
+				font: {
+					size:1.8em;
+				}
+				&:after {
+					content:" / ";
+					color:$quan;
+				}
+				&:last-child {
+					&:after{
+						content:"";
+					}
+				}
+				a {
 					border-bottom:none;
+					&:hover {
+						border-bottom:none;
+					}
 				}
 			}
 		}
@@ -116,26 +122,43 @@ header {
 .main-container {
 	@include grid-row();
 	min-height:100%;
-	background-color: rgba($sky, .5);
-	margin-top: 119px;
 }
 
 .content {
-	@include grid-column($columns:12, $collapse:false);
-	h1 {
+	@include grid-row();
+	> h1 {
+		@include grid-column(12);
 		font: {
 			family: nexa_boldregular, sans-serif;
 			size:2.3em;
 		}
+		margin-bottom: 1.5em;
+	}
+	.meta {
+		@include grid-column(12);
+		font: {
+			// family: nexa_boldregular, sans-serif;
+			size:1em;
+		}
+		margin-top: -50px;
 	}
 	article {
+		@include grid-column(12);
 		font-size:1.2em;
 	}
 }
 
 .author {
-	@include grid-column($columns:12, $collapse:false);
+	@include grid-column(12);
 	text-align:center;
+	h3 {
+		font-size:1.2em;
+		padding-top: 1em;
+		padding-bottom: .5em;
+		@include std-border( -bottom );
+		text-align:left;
+		margin-bottom: 1em;
+	}
 	img {
 		border-radius:50%;
 	}
@@ -178,15 +201,19 @@ header {
 	}
 }
 
-.meta {
-	@include grid-column(12);
-	font: {
-		// family: nexa_boldregular, sans-serif;
-		size:1.3em;
-	}
-}
 .article-share {
 	@include grid-column(12);
+	h3 {
+		font-size:1.2em;
+		padding-top: 1em;
+		padding-bottom: .5em;
+		@include std-border( -bottom );
+		text-align:left;
+		margin-bottom: 1em;
+	}
+	> div {
+		margin-bottom: 25px;
+	}
 	a {
 		border-bottom:none;
 		@include transition-duration(.3s);
@@ -210,7 +237,6 @@ header {
 				background-color: mix($facebook-color, $quan, 60%);
 			}
 		}
-		margin-bottom: 20px;
 	}
 	.twitter {
 		a {
@@ -218,7 +244,6 @@ header {
 				background-color: mix($twitter-color, $quan, 60%);
 			}
 		}
-		margin-bottom: 20px;
 	}
 	.gplus {
 		a {
@@ -226,6 +251,281 @@ header {
 				background-color: mix($gplus-color, $quan, 60%);
 			}
 		}
-		margin-bottom: 20px;
+	}
+}
+
+.tags {
+	@include grid-column(12);
+	h3 {
+		font-size:1.2em;
+		padding-top: 1em;
+		padding-bottom: .5em;
+		@include std-border( -bottom );
+		text-align:left;
+		margin-bottom: 1em;
+	}
+	.single-tag {
+		a {
+			line-height: 2.3;
+			border-radius:2px;
+			color:$quan;
+			padding: 5px;
+			border:none;
+			@include std-border;
+			height: 100%;
+			width: 100%;
+			@include transition-timing-function(ease);
+			@include transition-duration(.3s);
+		}
+		&:hover {
+			a {
+				color:$wheat;
+				background-color: $quan;
+				@include transition-timing-function(ease);
+				@include transition-duration(.3s);
+			}
+		}
+	}
+}
+
+.comments-area {
+	@include grid-column(12);
+	h3 {
+		font-size:1.2em;
+		padding-top: 1em;
+		padding-bottom: .5em;
+		@include std-border( -bottom );
+		text-align:left;
+		margin-bottom: 1em;
+	}
+}
+
+.comment-list {
+	.comment {
+		@include grid-column($columns:12, $collapse:true);
+		border-top:1px dotted rgba($quan, .5);
+		&:first-child {
+			border-top:none;
+		}
+		&.depth-2 {
+			@include grid-column($columns:11, $float:right, $collapse:true, $last-column:true);
+		}
+		&.depth-3 {
+			@include grid-column($columns:10, $float:right, $collapse:true, $last-column:true);
+		}
+		article {
+			@include grid-column($columns:12, $collapse:true);
+		}
+		.vcard {
+			border:none;
+			@include grid-column($columns:12, $collapse:true);
+		}
+		.fn {
+			padding-left: 5px;
+		}
+		.comment-meta {
+			font-weight: normal;
+			&:before {
+				content: "|";
+				padding:0 5px;
+			}
+		}
+		.reply {
+			text-align:right;
+			padding:1em 0;
+		}
+	}
+	margin-left: 0;
+}
+
+.comment-form {
+	label {
+		font-size: 1em;
+		font-size: $quan;
+	}
+	input {
+		display:block;
+		margin: 0 auto;
+		border:2px solid $wheat;
+		color:$quan;
+		background-color: transparent;
+		outline:none!important;
+		margin-bottom: 12px;
+		font-size: 22px;
+		line-height: 1;
+		padding: 5px 10px;
+		border-radius:2px;
+		@include placeholder{ 
+			font-size: 22px;
+			line-height: 1;
+			padding-top: 3px;
+			color:rgba($quan, .5);
+		}
+		&:focus {
+			background-color: $wheat;
+		}
+		&[type=submit] {
+			font-family: nexa_boldregular, sans-serif;
+			background-color: $wheat;
+			color:$quan;
+			@include transition-duration(.3s);
+			&:hover {
+				background-color: darken($wheat, 15%);
+				border-color:darken($wheat, 15%);
+				box-shadow: 2px 2px 6px rgba($quan, .5);
+				@include transition-duration(.3s);
+			}
+		}
+	}
+}
+
+.comment-form-comment {
+	textarea {
+		height:8*1.4em;
+		border:2px solid $wheat;
+		color:$quan;
+		background-color: transparent;
+		outline:none!important;
+		margin-bottom: 12px;
+		font-size: 1em;
+		line-height: 1.2;
+		padding: 15px;
+		border-radius:2px;
+		&:focus {
+			background-color: $wheat;
+		}
+	}
+}
+
+.comment-respond {
+	@include grid-column($columns:12, $collapse:true);
+}
+
+.team {
+	@media #{$small-only} {
+		@include block-grid($per-row:2)
+	}
+	@media #{$medium-only} {
+		@include block-grid($per-row:3)	
+	}
+	@media #{$large-only} {
+		@include block-grid($per-row:3)
+	}
+	@media #{$xlarge-up} {
+		@include block-grid($per-row:4)
+	}
+	.author {
+		list-style: none;
+		.name {
+			font-size: 1.6em;
+		}
+	}
+}
+
+@media #{$medium} {
+	body {
+		background: {
+			attachment:fixed;
+		}
+	}
+	header {
+		position: fixed;
+		>div {
+			.menu {
+				text-align: left;
+			}
+		}
+	}
+	.main-container {
+		margin-top: 119px;
+	}
+	.content {
+		> h1 {
+			@include grid-column($collapse:true);
+		}
+		.meta {
+			@include grid-column($collapse:true);	
+		}
+		article {
+			@include grid-column($columns:8, $collapse:true);
+		}
+	}
+	aside {
+		@include grid-column($columns:4, $float:right);
+		.author {
+			h3 {
+				padding-top: 0;
+				margin-top: 0;
+			}
+		}
+	}
+	.comments-area {
+		@include grid-column($columns:8, $collapse:true);
+		padding-top: 0;
+	}
+	.form-submit {
+		float:right;
+	}
+}
+
+header {
+	img {
+		max-height:80px;
+		@media #{$small-only} {
+			@include grid-column($columns:12, $collapse:false);
+			margin: 10px 0;
+			height:80px;
+		}
+		@media #{$medium-only} {
+			float:left;
+			margin-top: 10px;
+			margin-left:26px;
+		}
+		@media #{$large-only} {
+			position:absolute;
+			top:10px;
+			left:26px;
+		}
+		@media #{$xlarge-up} {
+			position:absolute;
+			top:10px;
+			left:26px;
+		}
+	}
+	>div {
+		@media #{$small-only} {
+
+		}
+		@media #{$medium-only} {
+			width:auto;
+		}
+		@media screen and (min-width: 57.5em) {
+			padding-top: 21.5px;
+		}
+		@media only screen and (min-width: 40.063em) and (max-width: 80em) {
+			position:absolute;
+			left:26px;
+			padding-left:120px;
+		}
+	}
+	&.small-fixed {
+		height:80px!important;
+		min-height:80px!important;
+		img {
+			position:absolute;
+			top:10px;
+			left:26px;
+			width: auto;
+			padding:0;
+			height:60px;
+			margin: 0;
+		}
+		> div {
+			ul {
+				li {
+					display:none;
+				}
+			}	
+		}
 	}
 }

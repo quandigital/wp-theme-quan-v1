@@ -1,9 +1,10 @@
 <?php
 	//the author sidebar
 ?>
-	<div id="sidebar">
+	<aside id="sidebar">
 		<div class="author">
-
+			<h3><?php _e( 'Written by' ); ?></h3>
+				
 			<?php
 				$aut_id = get_the_author_meta( 'ID' );
 
@@ -41,10 +42,6 @@
 			echo '</div>';
 ?>
 		</div>	
-		
-		<div class="meta">
-			<span class="date"><?php _e( 'Published on: ') . the_date( "m/d/y" ); ?></span>
-		</div>
 
 		<?php 
 
@@ -67,4 +64,34 @@
 				<i class="ion-social-googleplus-outline"></i> <span><?php _e( 'on google+' ); ?></span></a>
 			</div>
 		</div>
-	</div>
+
+		<?php
+			//show tags if post has any
+
+			if( has_tag() ) :
+				$tags = get_the_tags();
+				
+				usort( $tags, function ($a, $b) {
+					if ( $a->count == $b->count ) {
+						return 0;
+					}
+
+					return( $a->count > $b->count ) ? - 1 : 1;
+				});
+		?>
+
+			<div class="tags">
+			<h3>Tags</h3>
+				<?php
+					foreach( $tags as $tag ) {
+						echo '<span class="single-tag">';
+							echo '<a href="' . get_bloginfo( 'wpurl' ) . '?tag=' . $tag->slug . '">' . $tag->name . '</a>';
+						echo '</span>' . "\n";
+					}
+				?>
+			</div>
+
+		<?php
+			endif; 
+		?>
+	</aside>

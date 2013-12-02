@@ -11,15 +11,22 @@
 
 				the_title( '<h1>', '</h1>' );
 
-		echo '<article>';
-				the_content();
-		echo '</article>';
+				echo '<div class="meta">';
+					echo '<span class="date">' . __( 'Published on: ') . get_the_date( "m/d/Y" ) . '</span>';
+				echo '</div>';
+
+				echo '<article>';
+						the_content();
+				echo '</article>';
 
 				endwhile; 
 			endif; 
-	echo '</div>';
+		
+		get_sidebar();
+		
+		comments_template();
 
-	get_sidebar();
+	echo '</div>';
 
 	get_footer();
 ?>
