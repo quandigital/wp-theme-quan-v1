@@ -6,6 +6,7 @@
 		"mixins",
 		"modernizr-fixes",
 		"frame",
+		// "animations",
 		//fonts
 		"fonts/ionicons",
 		"fonts/nexafreelight", //nexa_lightregular
@@ -110,6 +111,104 @@ header {
 	}
 }
 
+footer {
+	position:absolute;
+	bottom:0;
+	left:0;
+	right:0;
+	padding:26px;
+	width:100%;
+	&:before {
+		content:"";
+		background-color: red;
+		height:100%;
+		width: 100%;
+		position:static;
+		left:0;
+		top:0;
+	}
+}
+
+.main-loop-container {
+	@include grid-column(12);
+}
+
+.main-loop {
+	@media #{$small-only} {
+		@include block-grid($per-row:1);
+	}
+	@media #{$medium-only} {
+		@include block-grid($per-row:2);	
+		img {
+			padding-top: 20px;
+			@include std-border( -top );
+		}
+		li {
+			&:first-child {
+				img {
+					padding: 0;
+					border-top: none;	
+				}
+			}
+			&:nth-child(2) {
+				img {
+					padding: 0;
+					border-top: none;	
+				}
+			}
+		}
+	}
+	@media #{$large-up} {
+		@include block-grid($per-row:3);
+		img {
+			padding-top: 20px;
+			@include std-border( -top );
+		}
+		li {
+			&:first-child {
+				img {
+					padding: 0;
+					border-top: none;	
+				}
+			}
+			&:nth-child(2) {
+				img {
+					padding: 0;
+					border-top: none;	
+				}
+			}
+			&:nth-child(3) {
+				img {
+					padding: 0;
+					border-top: none;	
+				}
+			}
+		}
+	}
+	li {
+		position:relative;
+		.postlink {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			border-bottom:none;
+		}
+		h2 {
+			font-family: nexa_boldregular,sans-serif;
+			font-size: 1.3em;
+			a {
+				border:none;
+				color:$quan;
+				&:hover {
+					color:$quan;
+				}
+			}
+		}
+	}
+}
+
 .border {
 	height:120px;
 	background-color:$wheat;
@@ -122,10 +221,55 @@ header {
 .main-container {
 	@include grid-row();
 	min-height:100%;
+	padding-top: 30px;
 }
 
+.home {
+	.main-container {
+		text-align:center;
+		margin-top: 10px;
+		img {
+			@include transform( scale(.89) );
+		}
+	}
+	nav {
+		padding-top: 20px;
+		ul {
+			list-style: none;
+			li {
+				display:inline;
+				&:after {
+					content:"/";
+					font-size: 2.3em;
+					padding:0 20px;
+					color:$wheat;
+				}
+				&:last-child {
+					&:after {
+						content:"";
+					}
+				}
+				a {
+					font-family: nexa_boldregular,sans-serif;
+					font-size: 2.3em;
+					color: $quan;
+					border-bottom:none;
+					@include transition-duration(.3s);
+					&:hover {
+						color:$wheat;
+						@include transition-duration(.3s);
+					}
+				}
+			}
+		}
+	}
+}
 .content {
 	@include grid-row();
+	@media #{$medium-only} {
+		padding-left: rem-calc(30) / 2;
+    	padding-right: rem-calc(30) / 2;
+	}
 	> h1 {
 		@include grid-column(12);
 		font: {
@@ -145,6 +289,9 @@ header {
 	article {
 		@include grid-column(12);
 		font-size:1.2em;
+		img {
+			max-width:100%;
+		}
 	}
 }
 
@@ -172,6 +319,7 @@ header {
 	.job {
 		@include grid-column(12);
 		font-size:1.2em;
+		padding: 5px 0;
 	}
 	.socials {
 		@include grid-column(12);
@@ -313,6 +461,13 @@ header {
 		&.depth-3 {
 			@include grid-column($columns:10, $float:right, $collapse:true, $last-column:true);
 		}
+		&:before {
+			display: block; 
+			content: ""; 
+			margin-top: -145px; 
+			height: 145px; 
+			visibility: hidden; 
+		}
 		article {
 			@include grid-column($columns:12, $collapse:true);
 		}
@@ -401,6 +556,9 @@ header {
 	@include grid-column($columns:12, $collapse:true);
 }
 
+.team-container {
+	@include grid-column(12);
+}
 .team {
 	@media #{$small-only} {
 		@include block-grid($per-row:2)
@@ -418,6 +576,43 @@ header {
 		list-style: none;
 		.name {
 			font-size: 1.6em;
+		}
+	}
+}
+
+.social-menu {
+	font-size: 25px;
+	color:$wheat;
+	position:fixed;
+	bottom:25px;
+	left: 100%;
+	margin-left: -55px;
+	z-index:5;
+	visibility:visible;
+	@include clearfix();
+	> div {
+		white-space:nowrap;
+		position:relative;
+		@include transition-duration(.3s);
+		right:0;
+		&:hover {
+			@include transition-duration(.5s);
+			right: 87%;
+		}
+	}
+	a {
+		color:$wheat;
+		border-bottom:none;
+		width: 100%;
+		height: 100%;
+		margin-right: 30px;
+		display:inline-block;
+		text-shadow: $quan 1px 1px 2px;
+	}
+	span {
+		&:nth-of-type(2) {
+			padding-left: 12px;
+			font-family: nexa_lightregular, sans-serif;
 		}
 	}
 }
@@ -440,6 +635,7 @@ header {
 		margin-top: 119px;
 	}
 	.content {
+		position:relative;
 		> h1 {
 			@include grid-column($collapse:true);
 		}
@@ -527,5 +723,32 @@ header {
 				}
 			}	
 		}
+	}
+}
+
+#wait {
+	background-image: url(../images/circle.svg);
+	background-size:50px 50px;
+	height:50px;
+	width: 50px;
+	position: fixed;
+	left:50%;
+	top:50%;
+	margin-left: -25px;
+	margin-top:-25px;
+	z-index:10;
+	// @include animation(spin, 1s, 0, infinite, linear);
+	@include animation-name(spin);
+	@include animation-duration(1s);
+	@include animation-timing-function(linear);
+	@include animation-iteration-count(infinite);
+}
+
+@include keyframes( spin ) {
+	from {
+		@include transform(rotate(0deg));
+	}
+	to {
+		@include transform(rotate(360deg));
 	}
 }

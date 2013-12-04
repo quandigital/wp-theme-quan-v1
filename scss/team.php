@@ -24,6 +24,7 @@
 
 	get_header();
 
+	echo '<div class="team-container">';
 		echo '<div class="team">';
 			foreach( $users as $user ) :
 				// dumpit( $user );
@@ -70,6 +71,7 @@
 			<?php
 			endforeach;
 		echo '</div>';
-
+	echo '</div>';
+	
 	get_footer();
 
