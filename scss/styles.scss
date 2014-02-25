@@ -155,7 +155,10 @@ html {
 			width: 90%;
 			background-color: $quan;
 			z-index:3;
-			overflow:hidden;
+			overflow:auto;
+			@media screen and (min-width:0\0) { 
+				// overflow:auto!important;
+			}
 			#fill {
 				background-color: rgba($sky, .5);
 				position:absolute;
@@ -1142,5 +1145,4 @@ html {
 	&.hover {
 		cursor:pointer;
 	}
-
 }

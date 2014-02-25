@@ -1,3 +1,4 @@
+<?php include( WP_CONTENT_FOLDERNAME . '/lang.php' ); ?>
 	
 <!DOCTYPE html>
 <!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->

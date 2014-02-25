@@ -12,7 +12,7 @@
 				the_title( '<h1>', '</h1>' );
 
 				echo '<div class="meta">';
-					echo '<span class="date">' . __( 'Published') . ' ' . get_the_date( "m/d/Y" ) . '</span> <span>' . _x( 'in', 'quan', 'in category ???' ) . ' ' . get_the_category_list(",") . '</span>';
+					echo '<span class="date">' . __( 'Published') . ' ' . get_the_date( "m/d/Y" ) . '</span> <span>' . _x( 'in', 'in category xyz', 'quan' ) . ' ' . get_the_category_list(",") . '</span>';
 				echo '</div>';
 
 				echo '<article>';
@@ -55,4 +55,3 @@
 	echo '</div>';
 
 	get_footer();
-?>

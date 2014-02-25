@@ -55,12 +55,23 @@
 
 .admin-bar {
 	#top {
-		top:28px;
+		top:$adminbar;
 	}
 	#frame {
-		top:35px;
+		top:$adminbar + 7px;
 	}
 	#inner-frame {
-		top:42px;
+		top:$adminbar + 14px;
+	}
+	@media screen and (max-width: 782px) {
+		#top {
+			top:$adminbar + 14px;
+		}
+		#frame {
+			top:$adminbar + 21px;
+		}
+		#inner-frame {
+			top:$adminbar + 28px;
+		}	
 	}
 }

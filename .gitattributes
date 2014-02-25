@@ -1,0 +1,11 @@
+*.DS_Store 		export-ignore
+/scss/			export-ignore
+/bower_components/	export-ignore
+/node_modules/		export-ignore
+/old/			export-ignore
+/tour/			export-ignore
+/bower.json		export-ignore
+/.bowerrc		export-ignore
+/Gruntfile.js		export-ignore
+/package.json		export-ignore
+/debug.log		export-ignore

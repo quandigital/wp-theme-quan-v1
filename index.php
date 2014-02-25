@@ -42,19 +42,30 @@
 				}
 ?>
 			
-				<div class="index_post-text">
-					
-						<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-						<p>
+				<div class="index-post-text">
+						
+							<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+							<p>
+								<?php
+									$excerpt = get_field( 'quan_excerpt' );
+									if( $excerpt ) {
+										echo $excerpt;
+									}
+								?>
+							</p>
+						
+					</div>
+					<div class="index-post-author tweet-author"> <?php //the tweet-author class does not make sense at all here, but it really simplyfies the jquery process (I should maybe change this sometime) ?>
+						<a href="<?php the_permalink(); ?>">
 							<?php
-								$excerpt = get_field( 'quan_excerpt' );
-								if( $excerpt ) {
-									echo $excerpt;
-								}
+								the_author_image_size( 100, 100, get_the_author_meta( 'ID' ) );
 							?>
-						</p>
-					
-				</div>
+						</a>
+						<div class="display-name">
+							<a href="<?php the_permalink(); ?>"><?php the_author(); ?></a>
+						</div>
+
+					</div>
 			</li>
 <?php
 		endwhile;

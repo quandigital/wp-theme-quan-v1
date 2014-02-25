@@ -1,0 +1,637 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: We're Sailors vbeta\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2014-02-25 09:44+0100\n"
+"Last-Translator: Alexander Goller <alexander.goller@quandigital.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n>1;\n"
+"X-Generator: Poedit 1.6.4\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: ../\n"
+"X-Textdomain-Support: yes\n"
+"Language: fr_FR\n"
+"X-Poedit-SearchPath-0: .\n"
+
+# @ quan
+#: comments.php:21
+#, php-format
+msgctxt "comments title"
+msgid "One Comment"
+msgid_plural "%1$s Comments"
+msgstr[0] "Un commentaire"
+msgstr[1] "%1$s commentaires"
+
+# @ quan
+#: comments.php:44
+msgid "Comment navigation"
+msgstr "Barre de navigation des commentaires"
+
+# @ quan
+#: comments.php:45
+msgid "&larr; Older Comments"
+msgstr "&larr; commentaires plus anciens"
+
+# @ quan
+#: comments.php:46
+msgid "Newer Comments &rarr;"
+msgstr "Commentaires les plus récents &rarr;"
+
+# @ quan
+#: comments.php:51
+msgid "Comments are closed."
+msgstr "Les commentaires sont fermés"
+
+# @ quan
+#: contact.php:22 tour/contact.php:23
+msgctxt "Contactform placeholder"
+msgid "E Mail"
+msgstr "E-mail"
+
+# @ quan
+#: contact.php:23 tour/contact.php:24
+msgctxt "Contactform placeholder"
+msgid "Phone"
+msgstr "Téléphone"
+
+# @ quan
+#: contact.php:24 tour/contact.php:25
+msgctxt "Contactform placeholder"
+msgid "Subject"
+msgstr "Sujet"
+
+# @ quan
+#: contact.php:26 tour/contact.php:27
+msgctxt "Spam Prevention"
+msgid "Please leave empty"
+msgstr "Merci de laisser vide"
+
+# @ quan
+#: footer.php:23 tour/social.php:3
+msgid "Write us an e-mail"
+msgstr "Ecrviez-nous un mail "
+
+# @ quan
+#: footer.php:26 tour/social.php:6
+msgid "Talk to us"
+msgstr "Contactez-nous"
+
+# @ quan
+#: footer.php:29 tour/social.php:9
+msgid "Read our blog"
+msgstr "Lisez notre blog"
+
+# @ quan
+#: footer.php:33 tour/social.php:13
+msgid "Like us on  facebook"
+msgstr "Likez-nous sur Facebook"
+
+# @ quan
+#: footer.php:38 tour/social.php:18
+msgid "Follow us on twitter"
+msgstr "Suivez-nous sur Twitter"
+
+# @ quan
+#: footer.php:43
+msgid "Add us to your circles"
+msgstr "Ajoutez-nous à vos cercles"
+
+# @ quan
+#: footer.php:47 tour/social.php:27
+msgid "Read the legal stuff"
+msgstr "Lisez les mentions légales"
+
+# @ quan
+#: front-page.php:14 header.php:51
+msgctxt "Please replace any spaces by &amp;nbsp;"
+msgid "Blog"
+msgstr "Blog"
+
+# @ quan
+#: front-page.php:15 header.php:52
+msgctxt "Please replace any spaces by &amp;nbsp;"
+msgid "Team"
+msgstr "Equipe"
+
+# @ quan
+#: front-page.php:16 header.php:53
+msgctxt "Please replace any spaces by &amp;nbsp;"
+msgid "Take&nbsp;the&nbsp;Tour"
+msgstr "Prenez&nbsp;part&nbsp;au&nbsp;voyage"
+
+# @ quan
+#: front-page.php:24 header.php:61
+msgctxt "Please replace any spaces by &amp;nbsp;"
+msgid "Contact"
+msgstr "Contact"
+
+# @ quan
+#: functions.php:134 home.php:194
+msgid "Nothing here yet. We are working on new blogposts."
+msgstr "C'est encore vide. Nous travaillons sur de nouveaux articles de blog."
+
+# @ default
+#. translators: 1: date, 2: time
+#: functions.php:215
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s à %2$s"
+
+# @ quan
+#: functions.php:215
+msgid "(Edit)"
+msgstr "(Editer)"
+
+# @ quan
+#: functions.php:221
+msgid "Your comment is awaiting moderation."
+msgstr "Votre commentaire est en attente de modération"
+
+# @ quan
+#: header.php:62 home.php:34
+msgid "All Posts"
+msgstr "Tous les articles"
+
+# @ quan
+#: home.php:50
+msgid "All Langagues"
+msgstr "Tous les langages"
+
+# @ quan
+#: send.php:37 tour/send.php:36
+msgid "Your Message has been sent."
+msgstr "Votre message a été envoyé"
+
+# @ quan
+#: send.php:37 tour/send.php:36
+msgid "We will get back to you shortly!"
+msgstr "Nous allons revenir vers vous rapidement!"
+
+# @ quan
+#: send.php:39 tour/send.php:38
+msgid "Please enter a valid email address."
+msgstr "Merci d'insérer une adresse mail valide."
+
+# @ quan
+#: send.php:49 tour/send.php:48
+msgid "Please enter a phone number."
+msgstr "Merci d'insérer un numéro de téléphone."
+
+# @ quan
+#: send.php:53 tour/send.php:52
+msgid "Please enter a subject."
+msgstr "Merci d'insérer un sujet."
+
+# @ quan
+#: sidebar.php:6
+msgid "Written by"
+msgstr "Ecrit par"
+
+# @ quan
+#: sidebar-jobs.php:44 sidebar.php:73
+msgid "Share"
+msgstr "Partagez"
+
+# @ quan
+#: sidebar-jobs.php:47 sidebar.php:76
+msgid "on facebook"
+msgstr "sur Facebook"
+
+# @ quan
+#: sidebar-jobs.php:50 sidebar.php:79
+msgid "on twitter"
+msgstr "sur Twitter"
+
+# @ quan
+#: sidebar-jobs.php:54 sidebar.php:83
+msgid "on google+"
+msgstr "sur Google+"
+
+# @ default
+#: single.php:15
+msgid "Published"
+msgstr "Publié"
+
+# @ quan
+#: single.php:15
+msgctxt "in category xyz"
+msgid "in"
+msgstr "dans"
+
+# @ quan
+#: contact.php:25 tour/contact.php:26
+msgctxt "Spam Prevention"
+msgid "Please leave empty to send the contact form."
+msgstr "Merci de laisser vide pour envoyer le formulaire de contact."
+
+# @ quan
+#: archive-quan_jobs.php:15
+msgid "Job Openings at Quan Digital GmbH"
+msgstr "Offres d'emploi chez Quan Digital GmbH"
+
+# @ quan
+#: front-page.php:20 header.php:57
+msgctxt "Please replace any spaces by &amp;nbsp;"
+msgid "Jobs"
+msgstr "Emplois"
+
+# @ quan
+#: functions.php:363 functions.php:392
+msgid "Details"
+msgstr "Détails"
+
+# @ quan
+#: sidebar-jobs.php:6
+msgid "Please address your application to"
+msgstr "Merci d'envoyer votre candidature à"
+
+# @ quan
+#: contact.php:28 tour/contact.php:29
+msgid "Send"
+msgstr "Envoyer"
+
+# @ quan
+#: send.php:45 tour/send.php:44
+msgid "Please enter an email address."
+msgstr "Merci d'insérer une adresse mail"
+
+# @ quan
+#: tour/contact.php:20
+msgid "Get on board!"
+msgstr "Engagez-nous !"
+
+# @ quan
+#: tour/index.php:10
+msgid ""
+"Quan Digital began with the idea of providing better online marketing "
+"through innovative technology, high standards and a passion for our "
+"customers."
+msgstr ""
+"Quan Digital est né de la volonté de proposer un marketing optimisé par son "
+"engagement, une technique innovante et de hauts critères d'exigence."
+
+# @ quan
+#: tour/index.php:11
+msgid "Every brand has its own unique story."
+msgstr "Chaque marque mérite une bonne histoire."
+
+# @ quan
+#: tour/index.php:12
+msgid "We tell it."
+msgstr "Nous racontons cette histoire."
+
+# @ quan
+#: tour/index.php:98
+msgid ""
+"Please use the scroll wheel of your mouse or the arrow keys on your keyboard "
+"to naviagte the page"
+msgstr ""
+"Merci d'utiliser la roulette de la souris ou les flèches de votre clavier "
+"pour naviguer sur la page"
+
+# @ quan
+#: tour/index.php:105
+msgid "OR"
+msgstr "OU"
+
+# @ quan
+#: tour/index.php:111
+msgid "Next <abbr title=\"Point of Interest\">POI</abbr>"
+msgstr "Prochain <abbr title=\"Point d'Intérêt\">PI</abbr>"
+
+# @ quan
+#: tour/index.php:117
+msgid "Keep the \"down\"-arrow pressed to travel.<br />Release it to stop."
+msgstr ""
+"Gardez la flèche \"du bas\" appuyée pour voyager.<br />Relâchez la pour "
+"arrêter"
+
+# @ quan
+#: tour/index.php:123
+msgid "Previous <abbr title=\"Point of Interest\">POI</abbr>"
+msgstr "Précédent <abbr title=\"point d'intérêt\">PI</abbr>"
+
+# @ quan
+#: tour/index.php:129
+msgid ""
+"Keep the \"up\"-arrow pressed to travel backwards.<br />Release it to stop."
+msgstr ""
+"Gardez la flèche \"du haut\" appuyée pour voyager en contresens. <br /"
+">Relâchez là pour arrêter."
+
+# @ quan
+#: tour/islands/consulting.php:5
+msgid "We map out your ideal path to success"
+msgstr "Nous vous créons un itinéraire optimal"
+
+# @ quan
+#: tour/islands/consulting.php:7
+msgid "Do you know your competitors?"
+msgstr "Connaissez-vous vos concurrents ?"
+
+# @ quan
+#: tour/islands/consulting.php:8
+msgid "Are you on top of every keyword in your market environment?"
+msgstr "Connaissez-vous chaque mot-clé utilisé sur votre marché ?"
+
+# @ quan
+#: tour/islands/consulting.php:9
+msgid ""
+"Are you absolutely sure that you always approach your target group in the "
+"right manner?"
+msgstr ""
+"Êtes-vous absolument certain de toujours atteindre votre groupe cible ?"
+
+# @ quan
+#: tour/islands/consulting.php:11
+msgid ""
+"Answering these questions is an integral part of planning the path to your "
+"individual ROI."
+msgstr ""
+"Répondre à ces questions fait partie de notre concept pour réaliser votre "
+"ROI personnalisé."
+
+# @ quan
+#: tour/islands/consulting.php:12
+msgid ""
+"Detailed market analysis is one thing, one-time or routine on-page and off-"
+"page audits are another &ndash; in the end, it’s always about a unique "
+"business strategy. Trend-setting know-how and self-critical advancement "
+"complement our highly technical setup. Our systems and crawlers, access to "
+"every established marketing tool for the reporting of all the familiar "
+"metrics  – you tell us where you want your journey to lead you."
+msgstr ""
+"Nous procédons à des analyses de marché et à des audits onpage et offpage "
+"occasionnels ou réguliers pour établir une stratégie de marché "
+"personnalisée. Notre savoir-faire novateur et notre développement continu "
+"complètent parfaitement nos outils ultramodernes. Grâce à nos systèmes, nos "
+"crawlers et l’accès aux outils de marketing conçus pour le reporting de "
+"toutes les métriques reconnues, nous vous aidons à atteindre l’objectif "
+"souhaité en vous indiquant le bon cap."
+
+# @ quan
+#: tour/islands/content.php:4
+msgid "You can only gain momentum with a good story"
+msgstr "Seule une bonne histoire pourra vous faire décoller"
+
+# @ quan
+#: tour/islands/content.php:6
+msgid "You know your product."
+msgstr "Vous connaissez votre produit."
+
+# @ quan
+#: tour/islands/content.php:7
+msgid "You know what you’re selling."
+msgstr "Vous savez ce que vous vendez."
+
+# @ quan
+#: tour/islands/content.php:8
+msgid "You know how great what you’re offering is."
+msgstr "Vous connaissez la qualité de votre offre."
+
+# @ quan
+#: tour/islands/content.php:10
+msgid "But do your potential customers know this as well?"
+msgstr "Est-ce que vos clients potentiels en ont également conscience ?"
+
+# @ quan
+#: tour/islands/content.php:12
+msgid ""
+"You need more than a great product. You need a story that is just as "
+"fantastic as your product. You provide us with your information and our "
+"editorial staff will tell your story in a way that captivates your target "
+"market. "
+msgstr ""
+"Vous avez besoin de plus que d'un bon produit. Il vous faut une histoire "
+"aussi extraordinaire que votre produit. Confiez-nous vos informations et "
+"notre rédaction les transforme en histoires."
+
+# @ quan
+#: tour/islands/content.php:14
+msgid ""
+"The anchors for your content strategy can be blog posts, product "
+"descriptions or landing pages. Our international team is more than happy to "
+"consult with you on this."
+msgstr ""
+"Votre stratégie de contenu peut s'articuler autour d'articles de blog, de "
+"textes commerciaux et de textes de page d'accueil. Notre équipe "
+"internationale vous conseille volontiers."
+
+# @ quan
+#: tour/islands/display.php:5
+msgid "Full speed ahead with CPC"
+msgstr "En avant toute avec CPC"
+
+# @ quan
+#: tour/islands/display.php:7
+msgid ""
+"You approach your customers directly. As a short-term investment, AdWords is "
+"the boost you need for your site. You only pay for the users who come to "
+"your website via the advertisement. AdWords campaigns offer an excellent "
+"basis for cost-benefit analyses of your online activities and only bring you "
+"the customers who are looking for your product. In other words – exactly the "
+"people you want to find you.<br />Your site is optimised, social media and "
+"blogger outreach strategies are kicking in – we use AdWords on your behalf, "
+"to better achieve your target conversion goals."
+msgstr ""
+"Vous vous adressez à vos clients de manière directe et ciblée. En tant "
+"qu'investissement à court terme, AdWords est le stimulant dont votre page a "
+"besoin. Vous ne payez que pour les utilisateurs qui visitent votre site "
+"internet, même via votre annonce publicitaire. Les campagnes AdWords offrent "
+"une excellente base pour les analyses coût/avantages de vos mesures en ligne "
+"et redirigent vers vous les clients qui sont exactement à la recherche de "
+"votre produit.<br />Votre page est optimisée, les réseaux sociaux et le "
+"netlinking sont actifs... Pour vous aider à atteindre encore mieux vos "
+"objectifs de conversion, nous mettons en place une stratégie AdWords pour "
+"vous."
+
+# @ quan
+#: tour/islands/outreach.php:9
+msgid "Ship ahoy &ndash; We are at the helm for you"
+msgstr "Ohé capitaine : nous tenons la barre pour vous"
+
+# @ quan
+#: tour/islands/outreach.php:11
+msgid ""
+"Your agency requires expertise for a specific project? You’re in need of "
+"optimised content? Maybe you’re already working with an agency and need "
+"support for a comprehensive venture?"
+msgstr ""
+"Vous êtes une agence et nécessitez l'aide d'experts pour réaliser un projet "
+"particulier ? Ou avez-vous besoin de contenus optimisés ? Vous travaillez "
+"peut-être déjà avec une agence et souhaitez être assisté dans le cadre d'un "
+"projet volumineux ?"
+
+# @ quan
+#: tour/islands/outreach.php:13
+msgid ""
+"Our products are your products. Quan Digital offers white label solutions, "
+"allowing you to resell our products and services as your own and thereby "
+"expanding your portfolio.<br />We support you and your agency in across a "
+"wide variety of fields. And of course, with a 100% anonymity assurance."
+msgstr ""
+"Quan Digital propose des solutions marque blanche pour étendre votre "
+"portfolio. En tant qu'agence, vous vendez nos produits et nos services sous "
+"forme d'offres complètes en marque blanche. Nous vous assistons, ainsi que "
+"votre équipe, sur tous les marchés. Et bien sûr en tout anonymat."
+
+# @ quan
+#: tour/islands/socialmedia.php:5
+msgid ""
+"Push the boat out &ndash; let others do the talking about just how wonderful "
+"you are"
+msgstr "Communiquez vos actions au monde entier"
+
+# @ quan
+#: tour/islands/socialmedia.php:7
+msgid ""
+"We use social networks on both an occupational and personal basis, and come "
+"into contact with the relentless amounts of content that streams through the "
+"internet every day.<br />We can supply great content, which will be heard "
+"and gladly shared. Content that is fresh, well written and engaging – and "
+"which lets the world know about your great work. It can be done on Facebook, "
+"via Twitter, YouTube or other platforms."
+msgstr ""
+"Nous utilisons tous les jours les réseaux sociaux, à des fins "
+"professionnelles ou privées, et sommes enchantés de pouvoir partager nos "
+"contenus avec le reste du monde de différentes manières.<br />Nous rendons "
+"publics les contenus qui doivent l'être. Des contenus différents, nouveaux "
+"et de qualité qui doivent être communiqués au monde entier. Ces contenus "
+"peuvent être publiés sur Facebook, via Twitter ou YouTube, ou encore une "
+"autre plateforme."
+
+# @ quan
+#: tour/islands/socialmedia.php:8
+msgid ""
+"Ultimately, this is rated in a very positive manner by search engines such "
+"as Google. Custom social media strategies, realised with the utmost "
+"precision, generate both attention and traffic."
+msgstr ""
+"Ceci est évalué de manière particulièrement positive par les moteurs de "
+"recherche comme Google. Des stratégies de médias sociaux créées sur mesure "
+"et réalisées avec précision, permettent d'attirer l'attention et d'augmenter "
+"la fréquentation des contenus."
+
+# @ quan
+#: tour/social.php:23
+msgid "Add us to your circle"
+msgstr "Ajoutez nous à votre cercle"
+
+# @ quan
+#: tour/straight-navigation.php:10
+msgid "Consulting"
+msgstr "Conseil"
+
+# @ quan
+#: tour/straight-navigation.php:13
+msgid "Content"
+msgstr "Contenu"
+
+# @ quan
+#: tour/straight-navigation.php:22
+msgid "AdWords"
+msgstr "AdWords"
+
+# @ quan
+#: tour/straight-navigation.php:25
+msgid "White-Label"
+msgstr "Marque blanche"
+
+# @ quan
+#: footer.php:26 tour/social.php:6
+msgctxt "public phone number for your country"
+msgid "tel:+123456789"
+msgstr "tel:+49302061379249"
+
+# @ quan
+# @ text on navigation after last island
+#: contact.php:19 tour/click-navigation.php:1
+msgid "Get on Board!"
+msgstr "Engagez-nous !"
+
+# @ quan
+#: tour/shipwreck.php:8
+msgid "Whoops! Something has gone wrong. We'll reload the page..."
+msgstr "Oops ! Une erreur s'est produite. Nous allons recharger la page..."
+
+# @ quan
+#: tour/straight-navigation.php:16
+msgid "Social Media"
+msgstr "Médias sociaux"
+
+# @ quan
+#: home.php:38
+msgid "Show Tweets"
+msgstr "Montrer les Tweets"
+
+# @ quan
+#: home.php:177
+msgid "Favorite"
+msgstr "Favori"
+
+# @ quan
+#: home.php:178
+msgid "Retweet"
+msgstr "Retweet"
+
+# @ quan
+#: home.php:179
+msgid "Reply"
+msgstr "Répondre"
+
+# @ quan
+#: tour/islands/linkbuilding.php:4
+msgid "Organic Visibility as a powerful engine in troubled waters"
+msgstr "Visibilité organique comme puissant moteur dans les eaux troubles"
+
+# @ quan
+#: tour/islands/linkbuilding.php:6
+msgid ""
+"Organic search strategy should be a key part of your online content. You "
+"know why? Organic clicks are free! These two criteria should always be taken "
+"into account to create an optimal environment: natural and sustainable."
+msgstr ""
+"La stratégie de recherche organique doit être un élément-clé de votre "
+"contenu en ligne. Vous savez pourquoi ? Les clics organiques sont gratuits! "
+"Les deux critères suivants devraient toujours être pris en considération "
+"pour créer un environnement optimal : naturel et durable."
+
+# @ quan
+#: tour/islands/linkbuilding.php:7
+msgid ""
+"Your customers need to recognize you as well as your products in the vast "
+"amount of results found, and they also need to be convinced through "
+"trustworthy content. We combine efficient online communication with target "
+"group oriented content, to ensure long-term organic visibility."
+msgstr ""
+"Vos clients ont besoin de vous reconnaître tout autant que vos produits dans "
+"l'énorme quantité de résultats trouvés. Ils ont aussi besoin d'être "
+"convaincus grâce à du contenu de confiance. Nous combinons efficacement "
+"votre communication en ligne avec du contenu spécialement optimisé pour "
+"votre coeur de cible afin d'assurer votre visibilité organique sur le long "
+"terme."
+
+# @ quan
+#: tour/islands/linkbuilding.php:10
+msgid "We choose Quality. Always."
+msgstr "Nous choisissons la qualité. Toujours."
+
+# @ quan
+#: tour/islands/linkbuilding.php:12
+msgid ""
+"We provide credibility and power of persuasion. It’s the only way to sail in "
+"troubled waters."
+msgstr ""
+"Nous fournissons de la crédibilité and du pouvoir de persuasion. C'est le "
+"seul moyen de naviguer au sein d'eaux troubles."
+
+# @ quan
+#: tour/straight-navigation.php:19
+msgid "Organic Visibility"
+msgstr "Visibilité organique"
