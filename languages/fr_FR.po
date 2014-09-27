@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: We're Sailors vbeta\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-02-25 09:44+0100\n"
+"PO-Revision-Date: 2014-04-14 09:59+0100\n"
 "Last-Translator: Alexander Goller <alexander.goller@quandigital.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -108,58 +108,58 @@ msgid "Read the legal stuff"
 msgstr "Lisez les mentions légales"
 
 # @ quan
-#: front-page.php:14 header.php:51
+#: header.php:51
 msgctxt "Please replace any spaces by &amp;nbsp;"
 msgid "Blog"
 msgstr "Blog"
 
 # @ quan
-#: front-page.php:15 header.php:52
+#: header.php:52
 msgctxt "Please replace any spaces by &amp;nbsp;"
 msgid "Team"
 msgstr "Equipe"
 
 # @ quan
-#: front-page.php:16 header.php:53
+#: header.php:53
 msgctxt "Please replace any spaces by &amp;nbsp;"
 msgid "Take&nbsp;the&nbsp;Tour"
 msgstr "Prenez&nbsp;part&nbsp;au&nbsp;voyage"
 
 # @ quan
-#: front-page.php:24 header.php:61
+#: header.php:61
 msgctxt "Please replace any spaces by &amp;nbsp;"
 msgid "Contact"
 msgstr "Contact"
 
 # @ quan
-#: functions.php:134 home.php:194
+#: functions.php:144 home.php:200
 msgid "Nothing here yet. We are working on new blogposts."
 msgstr "C'est encore vide. Nous travaillons sur de nouveaux articles de blog."
 
 # @ default
 #. translators: 1: date, 2: time
-#: functions.php:215
+#: functions.php:225
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s à %2$s"
 
 # @ quan
-#: functions.php:215
+#: functions.php:225
 msgid "(Edit)"
 msgstr "(Editer)"
 
 # @ quan
-#: functions.php:221
+#: functions.php:231
 msgid "Your comment is awaiting moderation."
 msgstr "Votre commentaire est en attente de modération"
 
 # @ quan
-#: header.php:62 home.php:34
+#: header.php:62
 msgid "All Posts"
 msgstr "Tous les articles"
 
 # @ quan
-#: home.php:50
+#: home.php:53
 msgid "All Langagues"
 msgstr "Tous les langages"
 
@@ -236,13 +236,13 @@ msgid "Job Openings at Quan Digital GmbH"
 msgstr "Offres d'emploi chez Quan Digital GmbH"
 
 # @ quan
-#: front-page.php:20 header.php:57
+#: header.php:57
 msgctxt "Please replace any spaces by &amp;nbsp;"
 msgid "Jobs"
 msgstr "Emplois"
 
 # @ quan
-#: functions.php:363 functions.php:392
+#: functions.php:383 functions.php:412
 msgid "Details"
 msgstr "Détails"
 
@@ -279,7 +279,7 @@ msgstr ""
 # @ quan
 #: tour/index.php:11
 msgid "Every brand has its own unique story."
-msgstr "Chaque marque mérite une bonne histoire."
+msgstr "Chaque marque mérite une belle histoire."
 
 # @ quan
 #: tour/index.php:12
@@ -443,13 +443,13 @@ msgstr ""
 "Vous vous adressez à vos clients de manière directe et ciblée. En tant "
 "qu'investissement à court terme, AdWords est le stimulant dont votre page a "
 "besoin. Vous ne payez que pour les utilisateurs qui visitent votre site "
-"internet, même via votre annonce publicitaire. Les campagnes AdWords offrent "
-"une excellente base pour les analyses coût/avantages de vos mesures en ligne "
-"et redirigent vers vous les clients qui sont exactement à la recherche de "
-"votre produit.<br />Votre page est optimisée, les réseaux sociaux et le "
-"netlinking sont actifs... Pour vous aider à atteindre encore mieux vos "
-"objectifs de conversion, nous mettons en place une stratégie AdWords pour "
-"vous."
+"internet, via votre annonce publicitaire. Les campagnes AdWords offrent une "
+"excellente base pour établir des analyses coûts/avantages de vos activités "
+"en ligne et redirigent vers vous les clients qui sont exactement à la "
+"recherche de votre produit.<br />Votre site est optimisé, les réseaux "
+"sociaux et la collaboration avec les blogueurs font de l’effet... Pour vous "
+"aider à atteindre encore mieux vos objectifs de conversion, nous mettons en "
+"place une stratégie AdWords pour vous."
 
 # @ quan
 #: tour/islands/outreach.php:9
@@ -566,22 +566,22 @@ msgid "Social Media"
 msgstr "Médias sociaux"
 
 # @ quan
-#: home.php:38
+#: home.php:40
 msgid "Show Tweets"
 msgstr "Montrer les Tweets"
 
 # @ quan
-#: home.php:177
+#: home.php:183
 msgid "Favorite"
 msgstr "Favori"
 
 # @ quan
-#: home.php:178
+#: home.php:184
 msgid "Retweet"
 msgstr "Retweet"
 
 # @ quan
-#: home.php:179
+#: home.php:185
 msgid "Reply"
 msgstr "Répondre"
 
@@ -628,10 +628,60 @@ msgid ""
 "We provide credibility and power of persuasion. It’s the only way to sail in "
 "troubled waters."
 msgstr ""
-"Nous fournissons de la crédibilité and du pouvoir de persuasion. C'est le "
-"seul moyen de naviguer au sein d'eaux troubles."
+"Nous fournissons de la crédibilité et du pouvoir de persuasion. C’est le "
+"seul moyen de naviguer en eaux troubles."
 
 # @ quan
 #: tour/straight-navigation.php:19
 msgid "Organic Visibility"
 msgstr "Visibilité organique"
+
+# @ quan
+#: 404.php:7
+msgid "That's morse code for a 404"
+msgstr "C'est le code en morse pour une erreur 404"
+
+# @ quan
+#: 404.php:9
+msgid "Unfortunately what you were looking for is no longer here."
+msgstr "Malhereusement ce que vous cherchez n'est plus ici."
+
+# @ quan
+#: 404.php:9
+msgid "Click here to go back home"
+msgstr "Cliquez ici pour revenir sur la page d'accueil"
+
+# @ quan
+#: front-page.php:14
+msgid "Blog"
+msgstr "Blog"
+
+# @ quan
+#: front-page.php:15
+msgid "Team"
+msgstr "Equipe"
+
+# @ quan
+#: front-page.php:16
+msgid "Take the Tour"
+msgstr "Prenez part au voyage"
+
+# @ quan
+#: front-page.php:20
+msgid "Jobs"
+msgstr "Emplois"
+
+# @ quan
+#: front-page.php:24
+msgid "Contact"
+msgstr "Contact"
+
+# @ quan
+#: home.php:36
+msgid "Filter Posts:"
+msgstr "Filtrer les articles:"
+
+# @ quan
+#: home.php:40
+msgid "Hide Tweets"
+msgstr "Cacher les Tweets"

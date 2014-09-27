@@ -129,11 +129,8 @@ function tweetAuthorPosition() {
 
 					firstLi.css({
 						'height': maxHeight,
-						'padding-bottom': firstLi.children('.tweet-author').outerHeight()
 					});
 
-					console.log('first height ' + heights);
-					console.log('first height ' + firstLi.outerHeight());
 					//if there is also a second element in the row
 					if( $(this).next().css( 'display' ) !== 'none' ) {
 						var secondLi = $(this).next();
@@ -142,18 +139,12 @@ function tweetAuthorPosition() {
 
 						firstLi.css({
 							'height': maxHeight,
-							'padding-bottom': firstLi.children('.tweet-author').outerHeight()
 						});
 						secondLi.css({
 							'height': maxHeight,
-							'padding-bottom': secondLi.children('.tweet-author').outerHeight()
 						});
 					}
 				}
-			});
-			$('.tweet-author, .index-post-author').css({
-				'position':'absolute',
-				'bottom': '20px'
 			});
 		}, 20);
 	}
@@ -178,7 +169,6 @@ function tweetAuthorPosition() {
 
 					firstLi.css({
 						'height': maxHeight,
-						'padding-bottom': firstLi.children('.tweet-author').outerHeight()
 					});
 
 					//if there is also a second element in the row
@@ -189,11 +179,9 @@ function tweetAuthorPosition() {
 
 						firstLi.css({
 							'height': maxHeight,
-							'padding-bottom': firstLi.children('.tweet-author').outerHeight()
 						});
 						secondLi.css({
 							'height': maxHeight,
-							'padding-bottom': secondLi.children('.tweet-author').outerHeight()
 						});
 
 						//if there are three in the row
@@ -201,29 +189,19 @@ function tweetAuthorPosition() {
 							var thirdLi = $(this).next().next();
 							heights[2]  = thirdLi.outerHeight();
 							maxHeight   = Math.max.apply( Math, heights );
-							// console.log('all heights ' + heights);
-							// console.log('max height ' + maxHeight);
 							firstLi.css({
 								'height': maxHeight,
-								'padding-bottom': firstLi.children('.tweet-author').outerHeight()
 							});			
 							secondLi.css({
 								'height': maxHeight,
-								'padding-bottom': secondLi.children('.tweet-author').outerHeight()
 							});
 							thirdLi.css({
 								'height': maxHeight,
-								'padding-bottom': thirdLi.children('.tweet-author').outerHeight()
 							});
 						} 
 					} 
 				}
 			});
-			$('.tweet-author, .index-post-author').css({
-				'position':'absolute',
-				'bottom': '20px'
-			});
-
 		}, 20);
 	}
 }
@@ -235,8 +213,8 @@ function resetHeights() {
 			'padding-bottom': '20px'
 		});
 		$('.tweet-author, .index-post-author').css({
-			'position':'relative',
-			'bottom': '',
+			// 'position':'relative',
+			// 'bottom': '',
 		});
 	});
 }

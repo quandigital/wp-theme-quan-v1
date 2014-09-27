@@ -1,5 +1,7 @@
 <?php 	
-	include( WP_CONTENT_FOLDERNAME . '/lang.php' ); 
+	include( WP_CONTENT_FOLDERNAME . '/lang.php' );
+
+	global $postlang;
 	if( is_single() && $post->post_type == 'post' ) {
 		$postlang = wp_get_post_terms( $post->ID, 'language' );
 		$postlang = $postlang[0]->slug;
@@ -16,8 +18,15 @@
 <head>
 	<meta charset="utf-8" />
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
-	<title><?php bloginfo( 'name' ); ?></title>
+	<title><?php 
 
+		if( is_single() ) {
+			single_post_title();
+		} else {
+			bloginfo( 'name' ); 
+		}
+	?></title>
+	
 	<?php wp_head(); ?>
 	<script>
 		var $ = jQuery.noConflict();

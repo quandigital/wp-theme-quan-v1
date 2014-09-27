@@ -24,6 +24,11 @@ function dumpit( $var, $dump = 'export', $return = false ) {
 	}
 }
 
+//php ini settings
+@ini_set( 'upload_max_size' , '64M' );
+@ini_set( 'post_max_size', '64M');
+@ini_set( 'max_execution_time', '300' );
+
 // Remove empty paragraph tags
 function removeEmptyParagraphs( $content ) {
     $content = str_replace("<p></p>","",$content);
@@ -98,6 +103,7 @@ function quan_add_scripts() {
 			'scrollspy',
 			'livequery',
 			'quan_scrollspy',
+			'comment-reply'
 			)
 		);
 	}
@@ -181,7 +187,9 @@ function add_htaccess($insertion) {
 		'AddType font/ttf .ttf',
 		'AddType font/otf .otf',
 		'AddType application/font-woff .woff',
-		'AddType application/x-font-woff .woff'
+		'AddType application/x-font-woff .woff',
+		'php_value upload_max_filesize 64M',
+		'php_value post_max_size 64M'
     	);
     return insert_with_markers($htaccess_file, 'Font-MIME-Type', $insertion);
 }
@@ -245,13 +253,20 @@ function quan_comments_display($comment, $args, $depth) {
 
 add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form' ) );
 
+function sgr_filter_image_sizes( $sizes) {
+		
+	unset( $sizes['thumbnail']);
+	unset( $sizes['medium']);
+	unset( $sizes['large']);
+	
+	return $sizes;
+}
+
+add_filter('intermediate_image_sizes_advanced', 'sgr_filter_image_sizes');
+
+require_once('aq_resizer.php');
+
 add_theme_support( 'post-thumbnails' );
-
-add_image_size( 'small', 480, 270, true );
-add_image_size( 'medium', 960, 540, true );
-add_image_size( 'large', 1920, 1080, true );
-add_image_size( 'xlarge', 3840, 2160, true );
-
 
 
 // add_action('wp_footer', 'show_template');
@@ -410,4 +425,166 @@ function quan_job_excerpt() {
     $content_array = explode( '::|::', $content );
 	
 	return '<p>' . $content_array[0] . '</p><a class="job-details" href="' . get_permalink() . '">' . __( 'Details', 'quan' ) . ' &rarr;</a>';
+}
+
+/**
+ * Auto-subscribe or unsubscribe an Edit Flow user group when a post changes status
+ *
+ * @see http://editflow.org/extend/auto-subscribe-user-groups-for-notifications/
+ *
+ * @param string $new_status New post status
+ * @param string $old_status Old post status (empty if the post was just created)
+ * @param object $post The post being updated
+ * @return bool $send_notif Return true to send the email notification, return false to not
+ */
+function efx_auto_subscribe_usergroup( $new_status, $old_status, $post ) {
+    global $edit_flow;
+ 
+    // When the post is first created, the group copy editors will automatically follow this post
+    if ( in_array( $new_status, array( 'pitch', 'pending' ) ) ) {
+        $copyeditors = get_term_by( 'slug', 'ef-usergroup-copy-editors', 'ef_usergroup' );
+        $usergroup_ids_to_follow = $copyeditors->term_id;
+        $edit_flow->notifications->follow_post_usergroups( $post->ID, $usergroup_ids_to_follow, true );
+    }
+ 
+    // Return true to send the email notification
+    return $new_status;
+}
+
+add_filter( 'ef_notification_status_change', 'efx_auto_subscribe_usergroup', 10, 3 );
+
+
+/**
+ * Limit custom statuses based on user role
+ * In this example, we limit the statuses available to the
+ * 'contributor' user role
+ *
+ * @see http://editflow.org/extend/limit-custom-statuses-based-on-user-role/
+ *
+ * @param array $custom_statuses The existing custom status objects
+ * @return array $custom_statuses Our possibly modified set of custom statuses
+ */
+function efx_limit_custom_statuses_by_role( $custom_statuses ) {
+ 
+    $current_user = wp_get_current_user();
+    switch( $current_user->roles[0] ) {
+        // Only allow a contributor to access specific statuses from the dropdown
+        case 'author':
+            $permitted_statuses = array(
+                    'pitch',
+                    'draft',
+                    'pending'
+                );
+            // Remove the custom status if it's not whitelisted
+            foreach( $custom_statuses as $key => $custom_status ) {
+                if ( !in_array( $custom_status->slug, $permitted_statuses ) )
+                    unset( $custom_statuses[$key] );
+            }
+            break;
+    }
+    return $custom_statuses;
+}
+add_filter( 'ef_custom_status_list', 'efx_limit_custom_statuses_by_role' );
+
+/**
+ * Hide the "Publish" button until a post is ready to be published
+ * In this example, we only show the "Publish button" until the post has the "Pending" status
+ *
+ * @see http://editflow.org/extend/hide-the-publish-button-for-certain-custom-statuses/
+ */
+function efx_hide_publish_button_until() {
+ 
+    if ( ! function_exists( 'EditFlow' ) )
+        return;
+ 
+    if ( ! EditFlow()->custom_status->is_whitelisted_page() )
+        return;
+ 
+    // Show the publish button if the post has one of these statuses
+    $show_publish_button_for_status = array(
+            'pending',
+            // The statuses below are WordPress' public statuses
+            'future',
+            'publish',
+            'schedule',
+            'private',
+        );
+    if ( ! in_array( get_post_status(), $show_publish_button_for_status ) ) {
+        ?>
+        <style>
+            #publishing-action { display: none; }
+        </style>
+        <?php
+    }
+}
+add_action( 'admin_head', 'efx_hide_publish_button_until' );
+
+
+function efx_only_allow_status( $custom_statuses ) {
+	$screen = get_current_screen();
+    $current_user = wp_get_current_user();
+    $status = get_post_status();
+
+   
+    if( $screen->base == 'post' && $screen->action == 'add' && $screen->post_type == 'post' ) { //new post screen
+	    switch( $current_user->roles[0] ) {
+	        // Only allow pitch for author
+	        case 'author':
+	            $permitted_statuses = array(
+	                    'pitch'
+	                );
+	            // Remove the custom status if it's not whitelisted
+	            foreach( $custom_statuses as $key => $custom_status ) {
+	                if ( !in_array( $custom_status->slug, $permitted_statuses ) )
+	                    unset( $custom_statuses[$key] );
+	            }
+	            break;
+	    }
+	} elseif( $screen->base == 'post' && $screen->action == '' && $screen->post_type == 'post' && $status = 'assigned' ) { //should be the edit screen
+		switch( $current_user->roles[0] ) {
+	        // Only allow a contributor to access specific statuses from the dropdown
+	        case 'author':
+	            $permitted_statuses = array(
+	                    'pitch',
+	                    'draft',
+	                    'pending'
+	                );
+	            // Remove the custom status if it's not whitelisted
+	            foreach( $custom_statuses as $key => $custom_status ) {
+	                if ( !in_array( $custom_status->slug, $permitted_statuses ) )
+	                    unset( $custom_statuses[$key] );
+	            }
+	            break;
+	    }
+	} elseif( $screen->base == 'post' && $screen->post_type == 'quan_jobs' ) { 
+		switch( $current_user->roles[0] ) {
+	        // Only allow a contributor to access specific statuses from the dropdown
+	        case 'author':
+	            $permitted_statuses = array(
+	                    'pitch',
+	                    'draft',
+	                    'pending'
+	                );
+	            // Remove the custom status if it's not whitelisted
+	            foreach( $custom_statuses as $key => $custom_status ) {
+	                if ( !in_array( $custom_status->slug, $permitted_statuses ) )
+	                    unset( $custom_statuses[$key] );
+	            }
+	            break;
+	    }
+	}
+
+    return $custom_statuses;
+}
+
+add_filter( 'ef_custom_status_list', 'efx_only_allow_status', 10, 3 );
+
+// add_action('admin_head', 'my_admin_add_page');
+
+function my_admin_add_page() {
+	$status = get_post_status();
+
+	echo '<code><pre>';
+		var_dump($status);
+	echo '</pre></code>';
 }

@@ -1,0 +1,33 @@
+body {
+	background: none;
+	border: none;
+	background-color: $white;
+}
+header {
+	background: none;
+	background-color: $white;
+	top: 0;
+}
+
+
+#left,
+#right,
+#top,
+#bottom,
+#inner-frame,
+#frame {
+	display: none;
+}
+
+.main-loop {
+	.type {
+		z-index: -1;
+	}
+	.index-tweet,
+	.index-post {
+		&:before {
+			color: darken($white, 1);
+			opacity: .6;
+		}
+	}
+}

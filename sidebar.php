@@ -76,7 +76,7 @@
 				<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" data-popup="true"><i class="ion-social-facebook"></i> <span><?php _e( 'on facebook', 'quan' ); ?></span></a>
 			</div>	
 			<div class="twitter">
-				<a href="https://twitter.com/intent/tweet?original_referer=<?php the_permalink(); ?>&source=tweetbutton&text=<?php echo $share_title; ?>&url=<?php the_permalink(); ?>" data-popup="true"><i class="ion-social-twitter"></i> <span><?php _e( 'on twitter', 'quan' ); ?></span></a>
+				<a href="https://twitter.com/intent/tweet?original_referer=<?php the_permalink(); ?>&source=tweetbutton&text=<?php echo $share_title; ?>&url=<?php the_permalink(); ?>&via=quandigital" data-popup="true"><i class="ion-social-twitter"></i> <span><?php _e( 'on twitter', 'quan' ); ?></span></a>
 			</div>
 			<div class="gplus">
 				<a href="https://plusone.google.com/_/+1/confirm?hl=de&url=<?php the_permalink(); ?>&title=<?php echo $share_title; ?>')" data-popup="true">

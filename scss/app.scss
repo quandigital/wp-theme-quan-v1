@@ -147,7 +147,7 @@ header {
 					padding: 1px;
 					width: 25px;
 					display: inline-block;
-					border-radius: 50%;
+					border-radius: 50%; 
 					border: 2px solid $wheat;
 					color: $wheat;
 					text-align: center;
@@ -169,353 +169,7 @@ footer {
 	}
 }
 
-.main-loop-container {
-	@include grid-column(12);
-}
-
-//create a mixin to not show the border on the top elements
-@mixin dontshow() {
-	.index-post-img {
-		padding: 0;
-		border-top: none;	
-	}
-	&.index-tweet {
-		.tweet-content {
-			border-top:none;
-		}
-	}
-}
-
-.main-loop {
-	.index-post-img {
-		@include std-border( -top );
-		padding-top: 20px;
-	}
-	.index-post {
-		z-index: 1;
-		.type {
-			overflow:hidden;
-			width: 100%;
-			height: 100%;
-			position:absolute;
-			left: -0.9375em;
-			z-index:-1;	
-			&:before{
-				content:"\f2bf";
-				font: {
-					family: ionicons;
-					size:16em;
-				}
-				@include transform( scale(1,-1) );
-				display:block;
-				position:absolute;
-				bottom:-150px;
-				right:-70px;
-				color:rgba( $sky, .3 );
-			}
-		}
-	}
-	.index-tweet {
-		z-index: 1;
-		.type {
-			z-index:-1;
-			overflow:hidden;
-			width: 100%;
-			height: 100%;
-			position:absolute;
-			left: -0.9375em;
-			&:before{
-				content:"\f242";
-				font: {
-					family: ionicons;
-					size:16em;
-				}
-				@include transform( scale(-1,1) );
-				display:block;
-				position:absolute;
-				bottom:-120px;
-				right:-50px;
-				color:rgba( $sky, .3 );
-			}
-		}
-		.tweet-attachment {
-			background: {
-				size: cover;
-				position: 0;
-			}
-			min-height:175px;
-			width:100%;
-			margin-bottom: 10px;
-		}
-		.tweet-content {
-			color: $quan;
-			p {
-				font: {
-					family: NexaSlab-Bold;
-					size:1.25em;
-				}
-				a {
-					font: {
-						family: NexaSlab-Regular;
-						size:.8em;
-					}
-					vertical-align:middle;
-					-ms-word-break: break-all;
-					// Non standard for webkit
-					word-break: break-word;
-					word-break: break-all;
-					&[href^="https://twitter.com/"],
-					&[href^="http://twitter.com/"] {
-						font: {
-							family: NexaSlabxBoldOblique;
-							size:1em;
-						}
-						border-bottom:none;
-						//lets not break "words"
-						-ms-word-break: normal;
-						word-break: normal;
-					}
-				}
-			}
-			@include std-border( -top );
-			padding-top: 20px;
-		}
-		.tweet-author {
-			vertical-align: middle;
-			bottom:0;
-			height:60px;
-			@include grid-column(12);
-			padding-top: 10px;
-			padding-left: 0;
-			.entry_author_image {
-				float:left;
-				width:50px;
-				height:50px;
-				margin-right: 15px;
-				@include backface-visibility( hidden );
-				img {
-					border-radius:50%;
-					width:100%;
-					height:100%;
-					vertical-align: inherit;
-					@include transition-duration(.2s);
-					&:hover {
-						border-color: darken( $quan, 10% );
-						@include transition-duration(.5s);
-					}
-				}
-			}
-			.text {
-				font: {
-					family: NexaSlab-Bold, Georgia ;
-					size:1.25em;
-				}
-				border:none;
-				line-height:50px;
-				vertical-align: inherit;
-				text-shadow: lighten($quan, 20%) 1px 1px 2px;
-			}
-			.display-name {
-				line-height: 25px;
-				+ .text {
-					line-height: 25px;
-				}
-				~ .intents {
-					top:35px;
-					.intent {
-						line-height: 25px;
-						&:hover {
-							&:before {
-								top:-35px;
-							}
-							&:after {
-								top:-11px;
-							}
-						}
-					}
-				}
-			}
-			.image {
-				&:hover {
-					~ .text {
-						color:lighten( $quan, 20% );
-						@include transition-duration(.5s);
-					}
-				}
-			}
-			.intents{
-				position: absolute;
-				top: 10px;
-				right: 20px;
-				overflow:visible!important;
-			}
-			.intent {
-				visibility:hidden;
-				opacity:0;
-				font-size:1.5em;
-				float:right;
-				padding-left: 10px;
-				line-height:50px;
-				position:relative;
-				text-shadow: lighten($quan, 20%) 1px 1px 2px;
-				&:hover {
-					&:before {
-						content:attr(data-intent);
-						position:absolute; 
-						top:-25px;
-						left:-35%;
-						z-index:10;
-						font-size:.6em;
-						line-height:.6em;
-						padding:8px;
-						background-color:rgba( $quan, .85 );
-						border-radius:4px;
-						color:$wheat;
-						visibility: visible;
-					}
-					&:after {
-						content:"";
-						display:block;
-						position:absolute;
-						top:-1px;
-						left:35%;
-						border-top: 8px solid rgba( $quan, .85 );
-						border-left:8px solid transparent;
-						border-right:8px solid transparent;
-
-					}
-				}
-				a {
-					border:none;
-				}
-
-			}
-		}
-		&:hover {
-			.intent {
-				@include transition-duration(.5s);
-				visibility:visible;
-				opacity: 1;
-			}
-		}
-		@include transition-duration(.2s);
-	}
-	@media #{$small-only} {
-		@include block-grid($per-row:1);
-		li {
-			&:first-child {
-				@include dontshow;
-			}
-		}
-	}
-	@media #{$medium-only} {
-		@include block-grid($per-row:2);
-		li {
-			&:first-child {
-				@include dontshow;
-			}
-			&:nth-child(2) {
-				@include dontshow;
-			}
-		}
-	}
-	@media #{$large-up} {
-		@include block-grid($per-row:3);
-		li {
-			&:first-of-type {
-				@include dontshow;
-			}
-			&:nth-of-type(2) {
-				@include dontshow;
-			}
-			&:nth-of-type(3) {
-				@include dontshow;
-			}
-		}
-	}
-	li {
-		position:relative;
-		.postlink {
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			border-bottom:none;
-		}
-		h2 {
-			font: {
-				family: NexaSlab-Bold;
-				size:1.25em;
-				weight:normal;
-			}
-			a {
-				border:none;
-				color:$wheat;
-				text-shadow: lighten($quan, 20%) 1px 1px 2px;
-			}
-		}
-		&:hover {
-			h2 {
-				a {
-					color:lighten( $quan, 20% );
-					@include transition-duration(.5s);
-				}
-			}
-			.index-post-author {
-				.display-name {
-					a {
-						color:lighten( $quan, 20% );
-						@include transition-duration(.5s);	
-					}
-				}
-			}
-		}
-	}
-	.index-post-author {
-		vertical-align: middle;
-		position:relative;
-		bottom:0;
-		@include grid-column(12);
-		padding-top: 10px;
-		padding-left: 0;
-		.entry_author_image {
-			float:left;
-			width:50px;
-			height:50px;
-			margin-right: 15px;
-			img {
-				border-radius:50%;
-				width:100%;
-				height:100%;
-				vertical-align: inherit;
-				@include transition-duration(.2s);
-				&:hover {
-					border-color: darken( $quan, 10% );
-					@include transition-duration(.5s);
-				}
-			}
-		}
-		.display-name {
-			font: {
-				family: NexaSlab-Bold, Georgia ;
-				size:1.25em;
-			}
-			border:none;
-			line-height:50px;
-			vertical-align: inherit;
-			text-shadow: lighten($quan, 20%) 1px 1px 2px;
-			a {
-				border:none;
-			}
-		}
-	}
-}
-
-#nothing-here {
-	@include grid-column(12);
-	font-size: 1.6em;
-}
+@import "index";
 
 .border {
 	height:120px;
@@ -653,17 +307,88 @@ footer {
 	article {
 		@include grid-column(12);
 		font-size:1.2em;
+		.abstract {
+			h2 {
+				font-size:1.125em;
+			}
+			p {
+				&:after {
+					content:"";
+					display:block;
+					padding:12px 0;
+					margin: 0 auto;
+					width:33%;
+					border-bottom: 1px solid $quan;
+				}
+			}
+		}
 		img {
 			max-width:100%;
 		}
-		p {
+		>p  {
 			font: {
 				size:1em;
 			}				
-			&:first-of-type {
-				font-family: NexaSlab-Bold;
-				// padding-top: 20px;
+		}
+		ul {
+			font: {
+				size:1em;
 			}
+			@media #{$medium-up} {
+				padding-left: 20px
+			}
+		}
+		*[id^="attachment"], img {
+			max-width:100%;
+			padding: 20px 0;
+		}
+		.wp-caption-text {
+			font: {
+				family: nexa_lightregular, sans-serif!important;
+				size: .8em;
+			}
+		}
+		blockquote {
+			border-left:none;
+			p {
+				font:{
+					family: NexaSlabxBoldItalic, Georgia;
+					size: 0.975em;
+				}
+				color:$wheat;
+				@include grid-column(12);
+				border-left: 2px solid $wheat;
+			}
+		}
+
+		ol, ul {
+			font-size: 1em;
+		}
+
+		.attribution {
+			text-align:right;
+			font-size:.8em;
+			.cc {
+				border:none;
+				img {
+					width:20px;
+				}
+			}
+		}
+		dl {
+			~ div {
+				margin-top: -80px;
+				margin-bottom: 20px;
+			}
+		}
+
+	}
+}
+
+.single-quan_jobs {
+	.content {
+		> h1 {
+			margin-bottom: .5em;
 		}
 	}
 }
@@ -862,7 +587,7 @@ footer {
 	}
 	img {
 		border-radius:50%;
-		border:4px solid $quan;
+		// border:4px solid $quan;
 	}
 	.name {
 		@include grid-column(12);
@@ -915,7 +640,7 @@ footer {
 	text-align:center;
 	h3 {
 		font-size:1.2em;
-		padding-top: 1em;
+		padding-top: 0;
 		padding-bottom: .5em;
 		@include std-border( -bottom );
 		text-align:left;
@@ -944,6 +669,7 @@ footer {
 		a {
 			font-size:1.2em;
 			border-bottom:none;
+			word-break:break-all;
 		}
 		&:before {
 			content:"";
@@ -1663,3 +1389,11 @@ header {
 		}
 	}
 }
+
+.no-js {
+	.reply {
+		display:none;
+	}
+}
+
+@import "overwrite";

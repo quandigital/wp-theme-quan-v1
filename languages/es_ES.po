@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: We're Sailors vbeta\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-02-25 09:45+0100\n"
+"PO-Revision-Date: 2014-02-28 12:35+0100\n"
 "Last-Translator: Alexander Goller <alexander.goller@quandigital.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -264,7 +264,7 @@ msgstr "Por favor, introduzca su dirección de e-mail"
 # @ quan
 #: tour/contact.php:20
 msgid "Get on board!"
-msgstr "¡Sube a bordo!"
+msgstr "¡Suba a bordo!"
 
 # @ quan
 #: tour/index.php:10
@@ -379,9 +379,9 @@ msgstr ""
 "avanzadas ideas van siempre de la mano de nuestro compromiso por lograr un "
 "progreso autocrítico y desarrollar una metodología que sirva como modelo. "
 "Contamos con sistemas y rastreadores propios, así como acceso a las "
-"herramientas de marketing más punteras para realizar informes basados con "
-"las métricas más fiables. <br />Simplemente indíquenos su objetivo, nosotros "
-"nos encargamos del resto."
+"herramientas de marketing más punteras para realizar informes basados en las "
+"métricas más fiables. <br />Simplemente indíquenos su objetivo, nosotros nos "
+"encargamos del resto."
 
 # @ quan
 #: tour/islands/content.php:4
@@ -436,7 +436,7 @@ msgstr ""
 # @ quan
 #: tour/islands/display.php:5
 msgid "Full speed ahead with CPC"
-msgstr "Con el pago por clic (PPC) ¡no habrá quien nos pare!"
+msgstr "¡A toda vela con PPC!"
 
 # @ quan
 #: tour/islands/display.php:7
@@ -488,7 +488,7 @@ msgid ""
 "wide variety of fields. And of course, with a 100% anonymity assurance."
 msgstr ""
 "Quan Digital le ofrece servicios White label o de marca blanca que le "
-"ayudarán a ampliar su cartera de inversiones.Nuestra oferta de servicios de "
+"ayudarán a ampliar su cartera de inversiones. Nuestra oferta de servicios de "
 "marca blanca, permite a su empresa comerciar con nuestros productos y "
 "prestaciones. Le ayudamos a usted y a su equipo a abrirse camino en el "
 "mercado que más le interese. Por supuesto, con total garantía de anonimato."
@@ -511,7 +511,7 @@ msgid ""
 "via Twitter, YouTube or other platforms."
 msgstr ""
 "Utilizamos a diario las redes sociales, en el trabajo y de forma privada, y "
-"no deja de sorprendernos el amplio abanico de posibilidades que estas "
+"no deja de sorprendernos el amplio abanico de posibilidades que éstas "
 "proporcionan a la hora de divulgar contenidos.<br />Nosotros difundimos esa "
 "información y nos complace además poder compartirla. ¡Demos a conocer al "
 "mundo algo bueno, diferente e innovador! Esto puede conseguirse por medio de "
@@ -579,7 +579,7 @@ msgstr "Social Media"
 # @ quan
 #: home.php:40
 msgid "Show Tweets"
-msgstr "Mostrar Tweets"
+msgstr "Mostrar tweets"
 
 # @ quan
 #: home.php:183
@@ -609,9 +609,9 @@ msgid ""
 "into account to create an optimal environment: natural and sustainable."
 msgstr ""
 "Una estrategia de búsqueda orgánica debe ser una parte clave de su contenido "
-"online. ¿Sabes por qué? ¡Los clicks orgánicos son gratis! Estos dos "
-"criterios se deben tener siempre en cuenta para crear un ambiente óptimo: "
-"natural y sostenible."
+"online. ¿Sabe por qué? ¡Los clicks orgánicos son gratis! Estos dos criterios "
+"se deben tener siempre en cuenta para crear un ambiente óptimo: natural y "
+"sostenible."
 
 # @ quan
 #: tour/islands/linkbuilding.php:7
@@ -621,11 +621,11 @@ msgid ""
 "trustworthy content. We combine efficient online communication with target "
 "group oriented content, to ensure long-term organic visibility."
 msgstr ""
-"Sus necesitan conocer a usted y a sus productos entre la gran cantidad de "
-"resultados encontrados, y ellos necesitan ser convencidos a través de "
-"contenido que transmita confianza. Combinamos una comunicación online "
-"eficiente con el grupo objetivo orientado al contenido, para  asegurar la "
-"visibilidad orgánica a largo plazo."
+"Sus clientes necesitan conocerle a usted y a sus productos entre la gran "
+"cantidad de resultados encontrados, y ellos necesitan ser convencidos a "
+"través de contenido que transmita confianza. Combinamos una comunicación "
+"online eficiente con el grupo objetivo orientado al contenido, para  "
+"asegurar la visibilidad orgánica a largo plazo."
 
 # @ quan
 #: tour/islands/linkbuilding.php:10
@@ -638,7 +638,7 @@ msgid ""
 "We provide credibility and power of persuasion. It’s the only way to sail in "
 "troubled waters."
 msgstr ""
-"Proporcionamos credibilidad y poder de la persuasión. Es la única manera de "
+"Proporcionamos credibilidad y poder de persuasión. Es la única manera de "
 "navegar en aguas turbulentas."
 
 # @ quan
@@ -674,7 +674,7 @@ msgstr "Equipo"
 # @ quan
 #: front-page.php:16
 msgid "Take the Tour"
-msgstr "De una vuelta"
+msgstr "Dé una vuelta"
 
 # @ quan
 #: front-page.php:20

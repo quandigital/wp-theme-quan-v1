@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: We're Sailors vbeta\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-02-21 16:13:35+0000\n"
+"PO-Revision-Date: 2014-02-26 16:08:25+0000\n"
 "Last-Translator: Alexander Goller <alexander.goller@quandigital.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.6.3\n"
+"X-Generator: Poedit 1.6.4\n"
 "X-Poedit-Language: \n"
 "X-Poedit-Country: \n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -143,18 +143,18 @@ msgid "Contact"
 msgstr "Contact"
 
 #. translators: 1: date, 2: time
-#: functions.php:225
+#: functions.php:232
 #, php-format
 #@ default
 msgid "%1$s at %2$s"
 msgstr "%1$s at %2$s"
 
-#: functions.php:225
+#: functions.php:232
 #@ quan
 msgid "(Edit)"
 msgstr "(Edit)"
 
-#: functions.php:231
+#: functions.php:238
 #@ quan
 msgid "Your comment is awaiting moderation."
 msgstr "Your comment is awaiting approval."
@@ -169,8 +169,8 @@ msgstr "All Posts"
 msgid "All Langagues"
 msgstr "All Languages"
 
-#: functions.php:144
-#: home.php:200
+#: functions.php:149
+#: home.php:228
 #@ quan
 msgid "Nothing here yet. We are working on new blogposts."
 msgstr "Nothing here yet. But we're working on new blogposts, so stay tuned."
@@ -202,12 +202,6 @@ msgstr "on google+"
 #@ default
 msgid "Published"
 msgstr "Published"
-
-#: single.php:15
-#@ quan
-msgctxt "in category xyz"
-msgid "in"
-msgstr "in"
 
 #: sidebar-jobs.php:44
 #: sidebar.php:73
@@ -263,8 +257,8 @@ msgctxt "Please replace any spaces by &amp;nbsp;"
 msgid "Jobs"
 msgstr "Jobs"
 
-#: functions.php:383
-#: functions.php:412
+#: functions.php:397
+#: functions.php:426
 #@ quan
 msgid "Details"
 msgstr "Details"
@@ -495,17 +489,17 @@ msgstr "Social Media"
 msgid "Show Tweets"
 msgstr ""
 
-#: home.php:183
+#: home.php:211
 #@ quan
 msgid "Favorite"
 msgstr ""
 
-#: home.php:184
+#: home.php:212
 #@ quan
 msgid "Retweet"
 msgstr ""
 
-#: home.php:185
+#: home.php:213
 #@ quan
 msgid "Reply"
 msgstr ""
@@ -563,7 +557,7 @@ msgstr ""
 #: front-page.php:15
 #@ quan
 msgid "Team"
-msgstr ""
+msgstr "The Team"
 
 #: front-page.php:16
 #@ quan

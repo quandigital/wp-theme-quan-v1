@@ -1,6 +1,7 @@
 var catID = $.urlParam('cat');
 var tagID = $.urlParam('tag');
 
+
 window.history.replaceState( history.state, 'BOO', './' );
 
 if( catID !== null ) {
@@ -90,7 +91,7 @@ function quanAjaxPosts( queryStrings ) {
             query_strings: queryStrings 
         },
         success: function(response) {
-            console.log( response );
+            // console.log( response );
             // return false;
             var newPostIDs = $.parseJSON(response);
             var currentPostIDs = $.parseJSON( $('#postids').val() );

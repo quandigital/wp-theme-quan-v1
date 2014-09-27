@@ -10,6 +10,6 @@ $.urlParam = function(name){
 
 window.quanLang = $.urlParam('lang');
 
-if( quanLang ) {
-	window.history.replaceState( quanLang, 'BOO', './' );
-}
+// if( quanLang ) {
+// 	window.history.replaceState( quanLang, 'BOO', './' );
+// }
