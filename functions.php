@@ -81,6 +81,7 @@ function quan_add_scripts() {
     wp_register_script( 'fittext', get_template_directory_uri() .  '/js/fittext.js', array( 'jquery' ), '', true );
     wp_register_script( 'send-message', get_template_directory_uri() .  '/js/send.js', array( 'jquery' ), '', true );
     wp_register_script( 'frontpage', get_template_directory_uri() .  '/js/frontpage-lang.js', array( 'jquery' ), '', true );
+    wp_register_script( 'hotjar', get_template_directory_uri() .  '/js/hotjar.js', array(), '', false );
 
     //styles
     wp_enqueue_style( 'normalize', get_template_directory_uri() . '/css/normalize.css' );
@@ -95,7 +96,8 @@ function quan_add_scripts() {
 		'app',
 		'cookie',
 		'lang',
-		'fittext'
+		'fittext',
+        'hotjar',
 	) );
 
 	if( is_single() ) {
